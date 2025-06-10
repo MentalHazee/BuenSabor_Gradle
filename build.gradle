@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'io.freefair.lombok' version '8.6'
+}
+
+group = 'Entities'
+
+version = '1.0.0'
+sourceCompatibility = '17'
+application {
+    mainClass = 'Test.App'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    // Conector JDBC para MySQL
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    // Hibernate Core
+    implementation 'org.hibernate.orm:hibernate-core:6.5.2.Final'
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    // Logging para Hibernate
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+    testImplementation 'junit:junit:4.13.2'
+}
